@@ -1,26 +1,13 @@
-// React imports
-import React from 'react';
-import ReactDOM from 'react-dom';
-// Components Imports
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-// Router Imports
-import { BrowserRouter as Router } from 'react-router-dom';
-// Redux Imports
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import notesReducer from './reducers';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-const store = createStore(notesReducer);
+//React Router
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-    (
-        <Provider store={store}>
-            <Router>
-                <App />
-            </Router>
-        </Provider>
-    )
-    , document.getElementById('root'));
-registerServiceWorker();
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("root")
+);
