@@ -32,14 +32,21 @@ class App extends Component {
   editNote(note){
     this.setState({notes: note})
   }
-  deletenote(note){
-    this.setState({notes: note})
-    axios.get(`http://localhost:8000/api/notes`)
-      .then(res => {
-        const axiosNotes = res.data.Message;
-        this.setState( {notes: axiosNotes} );
-      })
+  // deletenote(id){
+  //   this.setState({notes: note})
+  //   axios.delete(`http://localhost:8000/api/notes/:id`)
+  //     .then(res => {
+  //       const axiosNotes = res.data.Message;
+  //       this.setState( {notes: axiosNotes} );
+  //     })
+  // }
+ deletenote (id) {
+       axios.delete(`$http://localhost:8000/api/notes/${id}`)
+    // use filter to evalute on current copy of state
+    let filteredNotes = this.state.notes.filter(note => note.id != id) // eslint-disable-line
+    this.setState({ notes: filteredNotes  })
   }
+
   componentDidMount() {
     axios.get(`http://localhost:8000/api/notes`)
       .then(res => {
