@@ -1,28 +1,32 @@
 .App {
-  width: 100%;
-  height: 888px;
-  display: flex;
-  justify-content: center;
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  display: grid;
+  grid-template-columns: 25.5% 74.5%;
 }
-
-.sidebarContainer {
-  width: 25%;
-  max-width: 222px;
-  background-color: #D8D8D8;
-  border: 1px solid #979797;
+.sidebar-container {
   height: 100%;
 }
-
-.viewContainer {
-  width: 75%;
-  max-width: 666px;
-  height: 100%;
-  background: #F3F3F3;
-  border-top: 1px solid #979797;
-  border-right: 1px solid #979797;
-  border-bottom: 1px solid #979797;
+.container {
+  display: grid;
 }
-
-::-webkit-scrollbar {
-  display: none;
+main {
+  font-family: 'Raleway', sans-serif;
+  display: grid;
+  grid-template-rows: 18% 82%;
+}
+h2 {
+  padding-top: 65px;
+  padding-left: 37px;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+.notes-container {
+  padding-left: 39px;
+  padding-right: 21px;
+  display: grid;
+  grid-template-columns: 31% 31% 31%;
+  grid-template-rows: repeat(10, 320px);
+  grid-column-gap: 22px;
 }
